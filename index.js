@@ -66,6 +66,7 @@ function addMovie(event) {
 function deleteMovie(event) {
     event.target.parentNode.remove();
     message.textContent = 'Movie Deleted!'
+    revealMessage();
 }
 
 const crossOffMovie = (event) => {
@@ -83,7 +84,11 @@ const form = document.querySelector('form');
 form.addEventListener('submit', addMovie);
 
 
-
+function revealMessage() {
+    message.classList.remove('hide');
+    const fn = () => {message.classList.add('hide')}
+    setTimeout(fn, 1000)
+}
 
 
 
